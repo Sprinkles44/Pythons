@@ -2,13 +2,13 @@ import numpy as np
 import random as rand
 import math
 
-# **********************************************************************************************************************
-n = 50  # Number of planes
-with open('planeList.txt','w+') as file:
+# *****************************************************************************************************
+n = 25  # Number of planes
+with open('planelist.txt','w+') as file:
 	for i in range(0,n):
 		string = chr(rand.randint(65,90)) + str(rand.randint(100,999)) + "," + str(rand.randint(0,1500)) + "," + str(rand.randint(0,1500)) + "," + str(rand.randint(0,10000)) + "\n"
 		file.write(string)
-# **********************************************************************************************************************
+# *****************************************************************************************************
 
 p_pos = []  # Planes and their current position
 with open('planelist.txt','r') as file:
@@ -33,6 +33,6 @@ for i in range(len(p_pos)):
 				caut_p.append(p1[0])
 			if p2[0] not in caut_p:
 				caut_p.append(p2[0])
-
+print(str(len(caut_p)))
 for plane in caut_p:
 	print(str(plane) + ": You are in the Caution Zone, you must move immediately.\n")
